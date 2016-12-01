@@ -56,7 +56,10 @@ ROOT_URLCONF = 'askdjango.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            # os.path.join(BASE_DIR, 'templates'),
+            os.path.join(BASE_DIR, 'askdjango', 'templates'),
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -120,3 +123,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
 STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+    # os.path.join(BASE_DIR, 'static'),  # 책 내용
+    os.path.join(BASE_DIR, 'askdjango', 'static'),  # AskDjango 스타일
+]
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
